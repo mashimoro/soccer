@@ -1,0 +1,53 @@
+<div class="row">
+  <form [formGroup]="tradingForm" >
+    <div class="col-8" style="padding :2rem;">
+
+      <!-- <div style="margin-bottom: 1em">
+              <button type="submit" [disabled]="tradingForm.pristine" class="btn btn-success">Save</button> &nbsp;
+              <button type="button" (click)="revert()" [disabled]="tradingForm.pristine" class="btn btn-danger">Revert</button>
+            </div> -->
+ 
+      <!-- Hero Detail Controls -->
+      <button (click)="addLair()" type="button">Add a Secret Lair</button>
+      <table class="full-width table table-bordered">
+        <thead class="TableHead-BG">
+          <tr>
+            <th *ngFor="let header of headerTradingComparePopu">
+              {{header}}
+            </th>
+          </tr>
+        </thead>
+
+        <tbody formArrayName="items" class="well well-lg">
+          <tr *ngFor="let address of items.controls; let i=index" [formGroupName]="i">
+            <td>
+              <div class="form-group p-0">
+                <!-- <label class="center-block"> -->
+                <input class="form-control" formControlName="inputCkeck" type="checkbox" 
+                (click)="changeValue(i ,$event)">
+                <!-- </label> -->
+              </div>
+            </td>
+            <td>{{i+1}}</td>
+            <td>{{getValue(i,'securitySymbol')}}</td>
+            <td>{{getValue(i,'sectorName')}} / {{getValue(i,'marketName')}} </td>
+            <td>{{getValue(i,'avgTradingValue')}} </td>
+            <td>{{getValue(i,'avgTradingVolume')}} </td>
+            <td>{{getValue(i,'turnoverRatio')}} </td>
+            <td>{{getValue(i,'priceClose')}} </td>
+            <td>{{getValue(i,'marketCap')}} </td>
+            <td>{{getValue(i,'pe')}} </td>
+          </tr>
+
+        </tbody>
+
+      </table>  
+      <p>tradingForm value: {{ tradingForm.value | json}}</p> 
+
+    </div>
+  </form>
+  <div class="col-4" style="padding :2rem;">.col-sm-4</div>
+ 
+</div>
+
+<!-- <div *ngFor="let name of nameChangeLog">{{name}}</div> -->

@@ -1,0 +1,39 @@
+<p>
+  betslip works! sfzzfsfzsf {{listShow}}
+</p>
+<li *ngFor="let show of listShow">
+  ..= {{show}}
+</li>
+
+<table class="full-width table table-bordered">
+    <thead class="TableHead-BG">
+      <tr>
+        <th *ngFor="let header of headerTradingComparePopu">
+          {{header}}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody class="well well-lg">
+      <tr *ngFor="let show of listShow; let i=index"  >
+        <td>
+          <div class="form-group p-0">
+            <!-- <label class="center-block"> -->
+            <input class="form-control" name="inputCkeck" type="checkbox"  ng-checked="inputCkeck">
+            <!-- </label> -->
+          </div>
+        </td>
+        <td>{{i+1}}</td>
+        <td>{{show.securitySymbol}}</td>
+        <!-- <td>{{getValue(i,'sectorName')}} / {{getValue(i,'marketName')}} </td>
+        <td>{{getValue(i,'avgTradingValue')}} </td>
+        <td>{{getValue(i,'avgTradingVolume')}} </td>
+        <td>{{getValue(i,'turnoverRatio')}} </td>
+        <td>{{getValue(i,'priceClose')}} </td>
+        <td>{{getValue(i,'marketCap')}} </td>
+        <td>{{getValue(i,'pe')}} </td> -->
+      </tr>
+
+    </tbody>
+
+  </table>  
