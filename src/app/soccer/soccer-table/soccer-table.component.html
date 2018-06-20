@@ -1,0 +1,53 @@
+<table class="full-width table table-bordered">
+  <thead class="TableHead-BG"> 
+    <tr>
+        <th rowspan="2">Time</th>
+        <th rowspan="2">Event</th>
+        <th colspan="6" style="align-content: center">Full Time </th>
+        <th colspan="6">Half Time </th>
+      </tr>
+      <tr>
+        <th>HDP</th>
+        <th>Home</th>
+        <th>Away</th>
+        <th>Goal</th>
+        <th>Over</th>
+        <th>Under</th>
+  
+        <th>HDP</th>
+        <th>Home</th>
+        <th>Away</th>
+        <th>Goal</th>
+        <th>Over</th>
+        <th>Under</th>
+   
+      </tr>
+  </thead>
+
+  <tbody class="well well-lg">
+    <tr *ngFor="let soc of listSoccer; let i=index">
+      <td>
+        <!-- {{soc.team_home}} -->
+        {{soc.time_play | date : 'dd/MM hh:mm'}}
+      </td>
+      <td>
+        {{soc.team_away}}
+        <br> {{soc.play_dtstart}}
+      </td>
+      <td>{{soc.full_hdp_home}}</td>
+      <td (click)="send_main(soc.statisticsid,'full_12_home','full_hdp_home')" class="tr_link">{{soc.full_12_home}}</td>
+      <td (click)="send_main(soc.statisticsid,'full_12_away','full_hdp_home')" class="tr_link">{{soc.full_12_away}}</td>
+      <td>{{soc.full_goal_ball}}</td>
+      <td (click)="send_main(soc.statisticsid,'full_goal_over','full_hdp_home')" class="tr_link">{{soc.full_goal_over}}</td>
+      <td (click)="send_main(soc.statisticsid,'full_goal_under','full_hdp_home')" class="tr_link">{{soc.full_goal_under}}</td>
+
+      <td>{{soc.half_hdp_home}}</td>
+      <td (click)="send_main(soc.statisticsid,'half_12_home','half_hdp_home')" class="tr_link">{{soc.half_12_home}}</td>
+      <td (click)="send_main(soc.statisticsid,'half_12_away','half_hdp_home')" class="tr_link">{{soc.half_12_away}}</td>
+      <td >{{soc.half_goal_ball}}</td>
+      <td (click)="send_main(soc.statisticsid,'half_goal_over','half_hdp_home')" class="tr_link">{{soc.half_goal_over}}</td>
+      <td (click)="send_main(soc.statisticsid,'half_goal_under','half_hdp_home')" class="tr_link">{{soc.half_goal_under}}</td>
+    </tr> 
+  </tbody> 
+</table>
+  

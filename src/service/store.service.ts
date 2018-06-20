@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 // import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 // import { Observable } from 'rxjs/Observable';
-// import BehaviorSubject
-// import Observable
-
 
 @Injectable()
 export class StoreService {
 
-  private searchInput = new BehaviorSubject('');
+  // private searchInput = new BehaviorSubject('');
+  // private periodInput = new BehaviorSubject('');
 
   constructor() { }
 
@@ -21,4 +18,11 @@ export class StoreService {
   //   this.searchInput.next(searchInput);
   // }
 
+  // getPeriodInputObservable(): Observable<string> {
+  //   return this.periodInput.asObservable();
+  // }
+
+  // setPeriodInputBehavior(periodInput: string): void {
+  //   this.periodInput.next(periodInput);
+  // }
 }

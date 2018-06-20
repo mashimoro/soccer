@@ -11,15 +11,25 @@ import { AppRoutingModule } from '../app/app.routing';
 import {
   MatToolbarModule, MatButtonModule, MatSidenavModule,
   MatIconModule, MatListModule, MatGridListModule, MatCardModule,
-  MatMenuModule
+  MatMenuModule, MatInputModule
 } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventViewComponent } from './soccer/event-view/event-view.component';
-import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SoccerMainComponent } from './soccer/soccer-main/soccer-main.component';
 import { BetslipComponent } from './soccer/betslip/betslip.component';
 import { StoreService } from './store.service';
+import { SoccerTableComponent } from './soccer/soccer-table/soccer-table.component';
+import { SoccerService } from '../service/soccer.service';
+import { ApiClientService } from 'src/service/api-client.service';
+import { HttpModule } from '@angular/http';
+import { AuthService } from 'src/service/auth.service';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { DatePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +38,8 @@ import { StoreService } from './store.service';
     DashboardComponent,
     EventViewComponent,
     SoccerMainComponent,
-    BetslipComponent
+    BetslipComponent,
+    SoccerTableComponent
   ],
   imports: [
     BrowserModule,
@@ -44,10 +55,21 @@ import { StoreService } from './store.service';
     MatCardModule,
     MatMenuModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
-    ReactiveFormsModule // <-- #2 add to @NgModule imports
-  ],
-  providers: [StoreService],
+    ReactiveFormsModule, // <-- #2 add to @NgModule imports
+    MatFormFieldModule,
+    MatExpansionModule,
+    MatInputModule
+
+  ]
+  ,
+  providers: [
+    StoreService,
+    SoccerService,
+    ApiClientService,
+    AuthService,
+    DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

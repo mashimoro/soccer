@@ -1,0 +1,5 @@
+.table-scroll-header-fix {
+    /*width:238px;*/
+    overflow-y: auto;
+    max-height: 720px;
+  }
